@@ -1,0 +1,79 @@
+<div class="models-presets-settings">
+    <div class="setting-group">
+        <label class="checkbox_label">
+            <input id="models_presets_enabled" type="checkbox" {{#if enabled}}checked{{/if}} />
+            <span>Enable Models Presets</span>
+        </label>
+        <small class="notes">Automatically switch presets when the model changes based on name matching.</small>
+    </div>
+
+    <div class="setting-group">
+        <label for="models_presets_fallback">
+            <strong>Fallback Preset</strong>
+        </label>
+        <select id="models_presets_fallback" class="text_pole">
+            <!-- Options populated dynamically -->
+        </select>
+        <small class="notes">Preset to use when no matching preset is found for the model name.</small>
+    </div>
+
+    <div class="setting-group">
+        <label for="models_presets_threshold">
+            <strong>Match Sensitivity: <span id="models_presets_threshold_value">{{matchThreshold}}</span></strong>
+        </label>
+        <input id="models_presets_threshold" type="range" min="0" max="1" step="0.05" value="{{matchThreshold}}" class="slider" />
+        <small class="notes">Lower values = stricter matching. Higher values = more lenient matching. (0.0 = exact match, 1.0 = very fuzzy)</small>
+    </div>
+
+    <div class="setting-group">
+        <div class="flex-container flexFlowColumn">
+            <div class="flex-container alignitemscenter justifyCenter">
+                <strong>Recent Model → Preset Mappings</strong>
+            </div>
+            {{#if mappings}}
+            <div class="models-presets-mappings-container">
+                <table class="models-presets-mappings-table">
+                    <thead>
+                        <tr>
+                            <th>Model Name</th>
+                            <th>Applied Preset</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {{#each mappings}}
+                        <tr>
+                            <td><code>{{@key}}</code></td>
+                            <td><span class="preset-badge">{{this}}</span></td>
+                        </tr>
+                        {{/each}}
+                    </tbody>
+                </table>
+            </div>
+            <div class="flex-container justifyCenter margin-top-10">
+                <button id="models_presets_clear_mappings" class="menu_button">
+                    <i class="fa-solid fa-trash"></i>
+                    Clear History
+                </button>
+            </div>
+            {{else}}
+            <div class="models-presets-no-mappings">
+                <p><em>No mappings recorded yet. Change models to see automatic preset switching in action.</em></p>
+            </div>
+            {{/if}}
+        </div>
+        <small class="notes">This shows which presets were automatically applied for each model you've used.</small>
+    </div>
+
+    <div class="setting-group">
+        <div class="flex-container flexFlowColumn">
+            <strong>How It Works</strong>
+            <ul class="models-presets-help">
+                <li>When you switch models, the extension extracts keywords from the model name</li>
+                <li>It searches for presets with matching names (e.g., "claude-sonnet-4" → "Claude" preset)</li>
+                <li>If a match is found above the sensitivity threshold, that preset is automatically applied</li>
+                <li>If no match is found, the fallback preset is used instead</li>
+                <li><strong>Example:</strong> Any model with "claude" in the name will match a preset named "Claude"</li>
+            </ul>
+        </div>
+    </div>
+</div>
