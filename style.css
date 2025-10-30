@@ -1,0 +1,128 @@
+.models-presets-container {
+    padding: 10px;
+    margin-bottom: 15px;
+}
+
+.models-presets-settings {
+    padding: 10px;
+}
+
+.models-presets-settings .setting-group {
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid var(--SmartThemeBorderColor);
+}
+
+.models-presets-settings .setting-group:last-child {
+    border-bottom: none;
+}
+
+.models-presets-settings label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+.models-presets-settings .notes {
+    display: block;
+    margin-top: 5px;
+    color: var(--SmartThemeQuoteColor);
+    font-size: 0.9em;
+    font-style: italic;
+}
+
+.models-presets-mappings-container {
+    max-height: 300px;
+    overflow-y: auto;
+    margin: 10px 0;
+    border: 1px solid var(--SmartThemeBorderColor);
+    border-radius: 5px;
+    background-color: var(--black30a);
+}
+
+.models-presets-mappings-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.models-presets-mappings-table thead {
+    position: sticky;
+    top: 0;
+    background-color: var(--SmartThemeBlurTintColor);
+    z-index: 1;
+}
+
+.models-presets-mappings-table th,
+.models-presets-mappings-table td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid var(--SmartThemeBorderColor);
+}
+
+.models-presets-mappings-table th {
+    font-weight: bold;
+    font-size: 0.9em;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.models-presets-mappings-table tbody tr:hover {
+    background-color: var(--black50a);
+}
+
+.models-presets-mappings-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.models-presets-mappings-table code {
+    background-color: var(--black70a);
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-family: monospace;
+    font-size: 0.9em;
+}
+
+.models-presets-mappings-table .preset-badge {
+    display: inline-block;
+    padding: 4px 10px;
+    background-color: var(--SmartThemeBodyColor);
+    border: 1px solid var(--SmartThemeBorderColor);
+    border-radius: 12px;
+    font-size: 0.85em;
+    font-weight: 500;
+    color: var(--SmartThemeQuoteColor);
+}
+
+.models-presets-no-mappings {
+    padding: 20px;
+    text-align: center;
+    color: var(--SmartThemeQuoteColor);
+}
+
+.models-presets-help {
+    list-style-type: disc;
+    margin-left: 20px;
+    margin-top: 10px;
+    line-height: 1.6;
+}
+
+.models-presets-help li {
+    margin-bottom: 8px;
+}
+
+.models-presets-help strong {
+    color: var(--SmartThemeEmColor);
+}
+
+.margin-top-10 {
+    margin-top: 10px;
+}
+
+#models_presets_threshold {
+    width: 100%;
+}
+
+#models_presets_threshold_value {
+    font-weight: bold;
+    color: var(--SmartThemeEmColor);
+}
